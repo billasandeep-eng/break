@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Break Statement</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            background: #f4f6f8;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        input {
+            padding: 10px;
+            width: 180px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #444;
+        }
+        .out {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f1f1f1;
+            border-radius: 6px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>JavaScript Break Statement</h1>
+    <div class="card">
+        <h2>1. Print Numbers Until 5</h2>
+        <input type="number" id="n1" placeholder="Enter ending number">
+        <button onclick="q1()">CHECK</button>
+        <div class="out" id="out1"></div>
+    </div>
+    <div class="card">
+        <h2>2. Stop When Number is 7</h2>
+        <button onclick="q2()">CHECK</button>
+        <div class="out" id="out2"></div>
+    </div>
+    <div class="card">
+        <h2>3. Find First Number Divisible by 10</h2>
+        <input type="number" id="n3" placeholder="Enter ending number">
+        <button onclick="q3()">CHECK</button>
+        <div class="out" id="out3"></div>
+    </div>
+</div>
+<script>
+function q1() {
+    let n = Number(document.getElementById("n1").value);
+    let result = "";
+    for(let i = 1; i <= n; i = i + 1) {
+        if(i === 5) {
+            break;
+        }
+        result = result + i + " ";
+    }
+    document.getElementById("out1").innerText = result;
+}
+function q2() {
+    let result = "";
+    for(let i = 1; i <= 10; i = i + 1) {
+        if(i === 7) {
+            break;
+        }
+        result = result + i + " ";
+    }
+    document.getElementById("out2").innerText = result;
+}
+function q3() {
+    let n = Number(document.getElementById("n3").value);
+    let result = "";
+    for(let i = 1; i <= n; i = i + 1) {
+        result = result + i + " ";
+        if(i % 10 === 0) {
+            break;
+        }
+    }
+    document.getElementById("out3").innerText = result;
+}
+</script>
+</body>
+</html>
